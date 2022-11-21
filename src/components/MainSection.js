@@ -4,17 +4,21 @@ import { Box, Link } from '@chakra-ui/layout';
 export const MainSection = ({section}) => {
   
   const getBoxClassNames = (id, markDefs, children) => {
+    if (children.marks[0] === 'strong') {
+      return { 'fontWeight': 'bolder'}
+    };
+
     return markDefs.find(item => item._key === id) ? {'color': markDefs[0].hex} : {'textDecoration': children.marks[0]}
   }
 
 return (
-<Box px={9} pt={10} pb={['0', '50px']} key={section.sectionType} backgroundColor={section.backgroundColor.hex } color={section.textColor.hex} id="section1">
+<Box px={9} pt={10} pb={['0', '50px']} key={section.sectionType} backgroundImage="url('https://storage.builderall.com//franquias/2/6203456/editor-html/6882458.png')" color={section.textColor.hex} id="section1">
   <Box py={4} fontStyle="italic" textAlign="center" textTransform="uppercase" fontFamily="Montserrat, sans-serif" fontSize={["12px","18px"]}>
     {<h4>{section.lineOne[0].children.map(item => item.marks.length ? <Box style={getBoxClassNames(item.marks[0], section.lineOne[0].markDefs, item)} key={item.text}>{item.text}</Box> : item.text)}</h4>}
   </Box>
   <Box w={["95%", "70%"]} margin="auto" fontSize={["27px", "57px"]} fontFamily="oswaldregular" textAlign="center">
     <h1 style={{lineHeight:"1.2em", fontWeight:"500"}}>
-      {section.titleLineTwo[0].children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.titleLineTwo[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
+      {section.titleLineTwo[0].children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[1], section.titleLineTwo[0].markDefs, item)} key={item.text}><span style={getBoxClassNames(item.marks[0], section.titleLineTwo[0].markDefs, item)}>{item.text}</span></span> : item.text)}
     </h1>
   </Box>
   <Box textAlign="center" mx="auto" w={["77%", "100%"]} py={4} fontSize={["14px","24px"]} lineHeight="1.1em" fontFamily="sfuitextmedium" fontStyle="italic" fontWeight="500">
@@ -31,7 +35,7 @@ return (
         {section.lineFour[0].children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineFour[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
       </Box>
       <Box py={5} textAlign="center">
-        <Link href={`https://api.whatsapp.com/send?phone=${section.whatsapp}`} target="_blank" display="block" height="70px" width={["100%","488px"]} borderRadius="5px" margin="auto" backgroundColor={section.ctaBackgroundColor.hex} >
+        <Link href={`https://api.whatsapp.com/send?phone=${section.whatsapp}`} target="_blank" display="block" height="70px" width={["100%","488px"]} borderRadius="5px" margin="auto" backgroundColor={section.ctaBackgroundColor.hex} color={section.ctaColor.hex}>
           <Box pt={4} lineHeight="1.1em" fontSize={["19px","28px"]} pb={0} textTransform="uppercase" fontFamily="sfuitextheavy">{section.CtalineOne}</Box>
           <Box fontSize={["12px","16px"]} fontFamily="sfuitextregular">{section.CtalineTwo}</Box>
         </Link>
