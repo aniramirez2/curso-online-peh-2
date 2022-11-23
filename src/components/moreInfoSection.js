@@ -10,28 +10,30 @@ return (
     <Box py={[5,10]} textAlign="center" fontSize={["30px", "48px"]} lineHeight="1.1em" fontWeight="500">
       {section.lineOne[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineOne[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
     </Box>
-    <Link href={`https://api.whatsapp.com/send?phone=${section.whatsapp}`} target="_blank">
-      <img src='https://storage.builderall.com//franquias/2/6203456/editor-html/6093303.png' alt="instagram" style={{'maxWidth': "400px", 'padding': '0 60px 5px', 'margin': 'auto'}}/>
-    </Link>
-    <Box textAlign="center" w={["88%", "50%"]} margin="auto" mb={5} lineHeight="1.1em" fontWeight="500">
-      <Box pb={5}>(Click en la imagen para ir al Whatsapp)</Box>
-      {
-      section.titleLineTwo?.map((item, index) => item.children[0].marks.length ? 
-      <Box key={item.text} fontSize={["14px","24px"]} pb={1}  style={getBoxClassNames(item.children[0].marks[0], section.titleLineTwo[index].markDefs, item.children[0])}>{item.children[0].text}</Box> : 
-      <Box key={item.text} my={2} mx={3} textAlign="center" fontSize={["14px","24px"]} pb={1}>{item.children[0].text}</Box>)
-      }
-
-      {
-        section.lineThree?.map((item, index) => item.children[0].marks.length ? 
-        <Box key={item.text} fontSize={["14px","24px"]} pb={1}  style={getBoxClassNames(item.children[0].marks[0], section.lineThree[index].markDefs, item.children[0])}>{item.children[0].text}</Box> : 
+    <Box display={['inline', 'flex']} px={[0, 7]}>
+      <Link href={`https://api.whatsapp.com/send?phone=${section.whatsapp}`} target="_blank" margin="auto" width={['100%', '40%']}>
+        <img src='https://storage.builderall.com//franquias/2/6203456/editor-html/6093303.png' alt="instagram" style={{'maxWidth': "400px", 'padding': '0 60px 5px', 'margin': 'auto'}}/>
+        <Box pb={5} fontSize={['12px', '12px']} margin="auto" fontWeight="300" textAlign="center">(Click en la imagen para ir al Whatsapp)</Box>
+      </Link>
+      <Box textAlign="center" w={["88%", "60%"]} margin="auto" mb={5} lineHeight={["1.1em","1.7em"]} fontWeight="500" fontFamily="sfuitextmedium">
+        {
+        section.titleLineTwo?.map((item, index) => item.children[0].marks.length ? 
+        <Box key={item.text} fontSize={["14px","24px"]} pb={1}  style={getBoxClassNames(item.children[0].marks[0], section.titleLineTwo[index].markDefs, item.children[0])}>{item.children[0].text}</Box> : 
         <Box key={item.text} my={2} mx={3} textAlign="center" fontSize={["14px","24px"]} pb={1}>{item.children[0].text}</Box>)
-      }
+        }
 
-      {
-        section.lineFour?.map((item, index) => item.children[0].marks.length ? 
-        <Box key={item.text} fontSize={["14px","24px"]} pb={1}  style={getBoxClassNames(item.children[0].marks[0], section.lineFour[index].markDefs, item.children[0])}>{item.children[0].text}</Box> : 
-        <Box key={item.text} my={2} mx={3} textAlign="center" fontSize={["14px","24px"]} pb={1}>{item.children[0].text}</Box>)
-      }
+        {
+          section.lineThree?.map((item, index) => item.children[0].marks.length ? 
+          <Box key={item.text} fontSize={["14px","24px"]} pb={1}  style={getBoxClassNames(item.children[0].marks[0], section.lineThree[index].markDefs, item.children[0])}>{item.children[0].text}</Box> : 
+          <Box key={item.text} my={2} mx={3} textAlign="center" fontSize={["14px","24px"]} pb={1}>{item.children[0].text}</Box>)
+        }
+
+        {
+          section.lineFour?.map((item, index) => item.children[0].marks.length ? 
+          <Box key={item.text} fontSize={["14px","24px"]} pb={1}  style={getBoxClassNames(item.children[0].marks[0], section.lineFour[index].markDefs, item.children[0])}>{item.children[0].text}</Box> : 
+          <Box key={item.text} my={2} mx={3} textAlign="center" fontSize={["14px","24px"]} pb={1}>{item.children[0].text}</Box>)
+        }
+      </Box>
     </Box>
     <Box textAlign="center" my={5}>
       <Link href={`https://api.whatsapp.com/send?phone=${section.whatsapp}`} target="_blank" display="block" height="70px" width={["88%","488px"]} borderRadius="5px" margin="auto" boxShadow="#6a6a6a" backgroundColor={section.ctaBackgroundColor.hex} fontFamily="sfuitextheavy">
