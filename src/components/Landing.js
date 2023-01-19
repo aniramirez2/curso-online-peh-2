@@ -32,7 +32,7 @@ export const Landing = () => {
 
 	const validateId = async () => {
 		try {
-			const { data }  = await axios.get('https://tienda.admhost.site/wp-content/plugins/landingcreator/callback.php', {
+			const { data }  = await axios.get('https://mmgenerator.club/wp-content/plugins/landingcreator/callback.php', {
 				   params: {
 				  	pid: id
 				   },
@@ -40,7 +40,7 @@ export const Landing = () => {
 					'Content-Type': 'text/json'
 				   }
 				});
-			setWhatsapp(data._billing_phone);
+			setWhatsapp(data.link1_whatsapp);
 			return true;
 		} catch (error) {
 			return false;
