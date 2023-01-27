@@ -10,7 +10,7 @@ return (
     <Box my={[0 ,10]} fontFamily="oswaldbold" textAlign="center" fontSize={["28px","48px"]} width={["80%", "auto"]} margin="auto" py={5} lineHeight="1.1em">
      {section.lineOne[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.lineOne[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
     </Box>
-    <Box mt={2} justifyContent={["center","space-around"]} display={['block', 'flex']} fontFamily="sfuitextmedium" fontWeight="500">
+    <Box mt={2} justifyContent={["center","space-around"]} display={['block', 'flex']} fontFamily="oswaldbold" fontWeight="500">
       {section.titleLineTwo? 
       <Box lineHeight="1.1em" w={["90%","18%"]} fontSize={["14px","24px"]} textAlign={["center", "center"]} mx={5} mb={[6,0]}>
         {section.titleLineTwo[0]?.children.map(item => item.marks.length ? <span style={getBoxClassNames(item.marks[0], section.titleLineTwo[0].markDefs, item)} key={item.text}>{item.text}</span> : item.text)}
@@ -35,7 +35,7 @@ return (
     </Box>:null
     }
     {section.CtalineOne?
-    <Box textAlign="center" my={5} fontFamily="sfuitextheavy" fontWeight={400}>
+    <Box textAlign="center" my={5} fontFamily="oswaldbold" fontWeight={400}>
       <Link href={`https://api.whatsapp.com/send?phone=${section.whatsapp}`} 
         target="_blank" 
         display="block" 
@@ -48,8 +48,8 @@ return (
         color={section.ctaColor.hex}
         lineHeight="1.5em"
         pt={2}>        
-        <Box fontSize={["19px","28px"]} color={section.ctaColor.hex} pt={2} fontFamily="sfuitextheavy">{section.CtalineOne}</Box>        
-        <Text color={section.ctaColor.hex} fontFamily="sfuitextregular" fontSize={["12px","16px"]}>{section.CtalineTwo}</Text>
+        <Box fontSize={["19px","28px"]} color={section.ctaColor.hex} pt={2} fontFamily="oswaldbold">{section.CtalineOne}</Box>        
+        <Text color={section.ctaColor.hex} fontFamily="oswaldregular" fontSize={["12px","16px"]}>{section.CtalineTwo}</Text>
       </Link>
     </Box>:null
     }

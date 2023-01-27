@@ -17,13 +17,10 @@ export const Landing = () => {
 	const getData = async () => {
 		try {
 			const { data  } = await api.get();
-			console.log("pages", data)
 			const sections = data.result.find(item => item._id === "2ed68eb4-5f96-45bf-b5cf-8ecc995a24a7").content;
 			sections.forEach(element => {				
 				element.whatsapp = whatsapp;
 			});
-
-			console.log("data", data);
 			setData(sections);
 		 } catch (error) {
 			console.log('error', error);
