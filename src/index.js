@@ -27,7 +27,8 @@ root.render(
 		<ChakraProvider theme={theme}>
 		<Router>
         <Routes>
-          <Route path="/:id" element={<Landing />} />
+          <Route path="/:id/:lang" element={<Landing />} />
+		  <Route path="/:id" element={<Landing />} />
           <Route path="/" element={<App />} />
         </Routes>
     </Router>
