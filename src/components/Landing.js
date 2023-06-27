@@ -38,8 +38,8 @@ export const Landing = () => {
 					'Content-Type': 'text/json'
 				   }
 				});
-				//console.log("data", data)
-				if(data._completed_date) {					
+				console.log("data", data)
+				if(data.orderDetail.status === "wc-completed") {					
 					setWhatsapp(`${data.link1_whatsapp}`);
 				} else {
 					navigate('/')
