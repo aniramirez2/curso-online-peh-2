@@ -31,18 +31,15 @@ export const Landing = () => {
   const validateId = async () => {
     try {
       const { data } = await axios.get(
-        "https://mmgenerator.club/wp-content/plugins/landingcreator/callback.php",
+        `https://api.mmgenerator.club/api/subscription/customer/${id}`,
         {
-          params: {
-            pid: id,
-          },
           headers: {
             "Content-Type": "text/json",
           },
         }
       );
-      if (data.status === "active") {
-        setWhatsapp(validarURL(data.whatsapp));
+      if (data.statusCode === 200) {
+        setWhatsapp(validarURL(data.whatsapp || ''));
       } else {
         navigate("/");
       }
