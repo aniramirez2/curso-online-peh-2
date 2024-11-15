@@ -39,7 +39,7 @@ export const Landing = () => {
         }
       );
       if (data.statusCode === 200) {
-        setWhatsapp(validarURL(data.whatsapp || ""));
+        setWhatsapp(validarURL(data.data.whatsapp || ""));
       } else {
         navigate("/");
       }

@@ -37,7 +37,7 @@ export const MoreInfoSection = ({ section }) => {
       </Box>
       <Box textAlign="center" my={5}>
         <Link href={` ${section.whatsapp}`} target="_blank" display="block" height="70px" width={["88%", "488px"]} borderRadius="5px" margin="auto" boxShadow="#6a6a6a" backgroundColor={section.ctaBackgroundColor.hex} fontFamily="oswaldbold">
-          <Box fontSize={["19px", "28px"]} pt={2} lineHeight="1.1em" color={section.ctaColor.hex} fontFamily="oswaldbold">{section.CtalineOne}</Box>
+          <Box fontSize={["19px", "28px"]} pt={['17px',2]} lineHeight="1.1em" color={section.ctaColor.hex} fontFamily="oswaldbold">{section.CtalineOne}</Box>
           <Box fontSize={["12px", "16px"]} color={section.ctaColor.hex} fontFamily="oswaldregular">{section.CtalineTwo}</Box>
         </Link>
       </Box>

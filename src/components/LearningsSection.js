@@ -48,7 +48,9 @@ export const LearningSection = ({ section }) => {
             color={section.ctaColor.hex}
             lineHeight="1.5em"
             pt={2}>
-            <Box fontSize={["19px", "28px"]} color={section.ctaColor.hex} pt={2} fontFamily="oswaldbold">{section.CtalineOne}</Box>
+            <Box fontSize={["19px", "28px"]} color={section.ctaColor.hex} pt={[1,2]} fontFamily="oswaldbold">
+              {section.CtalineOne}
+              </Box>
             <Text color={section.ctaColor.hex} fontFamily="oswaldregular" fontSize={["12px", "16px"]}>{section.CtalineTwo}</Text>
           </Link>
         </Box> : null
